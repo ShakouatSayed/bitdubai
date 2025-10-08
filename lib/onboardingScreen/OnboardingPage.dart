@@ -43,7 +43,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Row(
-                    children: List.generate(
+                    children: List.generate(      
                       onboardingData.length,
                       (index) => Padding(
                         padding: EdgeInsets.only(right: 6),
