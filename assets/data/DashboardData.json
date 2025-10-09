@@ -1,0 +1,56 @@
+{
+  "name" : "Ahmed Al-Mansoori",
+  "balance" : 52450.75,
+  "balance_usd" : 14280,
+  "change_percent" : 12.5,
+  "assets" : [
+    {
+      "name" : "Bitcoin",
+      "sub_text" : "0.0125 BTC",
+      "amount_aed" : 2250,
+      "change_percent" : 5.2,
+      "icon" : "assets/icons/btc.png",
+    },
+    {
+      "name" : "USDT",
+      "sub_text" : "13,650 USDT",
+      "amount_aed" : 50200,
+      "change_percent" : 0.0,
+      "icon" : "assets/icons/usdt.png"
+    }
+  ],
+  "transactions" : [
+    {
+      "title" : "Bitcoin",
+      "subtitle" : "+450 AED",
+      "amount_text" : "+0.0025 BTC",
+      "time_ago" : "2 hours ago",
+      "icon" : "assets/icons/btc.png",
+      "is_positive" : true
+    },
+    {
+      "title" : "USDT",
+      "subtitle" : "-1,835 AED",
+      "amount_text" : "-500 USDT",
+      "time_ago" : "5 hours ago",
+      "icon" : "assets/icons/usdt.png",
+      "is_positive" : false
+    },
+    {
+      "title" : "Bitcoin",
+      "subtitle" : "+180 AED",
+      "amount_text" : "+0.0010 BTC",
+      "time_ago" : "1 day ago",
+      "icon" : "assets/icons/btc.png",
+      "is_positive" : true
+    },
+    {
+      "title" : "Transfer",
+      "subtitle" : "Pakistan",
+      "amount_text" : "-2,000 AED",
+      "time_ago" : "2 days ago",
+      "icon" : "assets/icons/remit.png",
+      "is_positive" : false
+    }
+  ]
+}

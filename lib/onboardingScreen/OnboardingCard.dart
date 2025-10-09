@@ -35,7 +35,7 @@ class OnboardingCard extends StatelessWidget{
         SizedBox(height: 12),
 
         // Subtitle text
-        Padding(padding: EdgeInsets.symmetric(horizontal: 20.0), child: Text(subtitle, style: TextStyle(
+        Padding(padding: EdgeInsets.symmetric(horizontal: 20.0), child: Text(subtitle, textAlign: TextAlign.center, style: TextStyle(
           color: Color(0xFF7C8AA5),
           fontSize: 15
         ))),

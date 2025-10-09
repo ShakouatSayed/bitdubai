@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:bitdubai/onboardingScreen/OnboardingPage.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -214,6 +215,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     content: Text("Selected: $lang"),
                                   ),
                                 );
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => OnboardingPage()));
                               },
                               style: ElevatedButton.styleFrom(
                                 backgroundColor: Color(0xFFF6A623),

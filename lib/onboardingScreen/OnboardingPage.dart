@@ -1,4 +1,6 @@
 import 'package:bitdubai/onboardingScreen/OnboardingCard.dart';
+import 'package:bitdubai/signScreen/SignInPage.dart';
+import 'package:bitdubai/utils/Style.dart';
 import 'package:flutter/material.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -32,7 +34,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xFFF8FAFD),
+      backgroundColor: backgraoundColor,
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
@@ -91,6 +93,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   }else{
                     _pageController.nextPage(duration: Duration(milliseconds: 400), curve: Curves.easeInOut);
                   }
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => SignInPage()));
                 },style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF0A68F5), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
                 ), child: Row(
