@@ -32,9 +32,9 @@ class DashboardController extends GetxController {
 
       // Assign data to reactive variables
       name.value = data["name"];
-      balance.value = data["balance"].toDouble;
-      balanceUsd.value = data["balance_usd"].toDouble;
-      changePercent.value = data["change_percent"].toDouble;
+      balance.value = (data["balance"] as num).toDouble();
+      balanceUsd.value = (data["balance_usd"] as num).toDouble();
+      changePercent.value = (data["change_percent"] as num).toDouble();
 
       assets.value = (data["assets"] as List)
           .map((item) => AssetModel.fromJson(item))

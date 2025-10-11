@@ -9,7 +9,7 @@
       "sub_text" : "0.0125 BTC",
       "amount_aed" : 2250,
       "change_percent" : 5.2,
-      "icon" : "assets/icons/btc.png",
+      "icon" : "assets/icons/btc.png"
     },
     {
       "name" : "USDT",
@@ -46,7 +46,7 @@
     },
     {
       "title" : "Transfer",
-      "subtitle" : "Pakistan",
+      "subtitle" : "Bangladesh",
       "amount_text" : "-2,000 AED",
       "time_ago" : "2 days ago",
       "icon" : "assets/icons/remit.png",

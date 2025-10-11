@@ -1,3 +1,5 @@
+import 'package:bitdubai/dashboardScreen/DashboardScreen.dart';
+import 'package:bitdubai/dashboardScreen/StartPage.dart';
 import 'package:bitdubai/utils/Style.dart';
 import 'package:flutter/material.dart';
 
@@ -139,7 +141,9 @@ class _SignInPageState extends State<SignInPage> {
                   width: double.infinity,
                   height: 60,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => StartPage()));
+                    },
                     style: ElevatedButton.styleFrom(
                       backgroundColor: primaryBlue,
                       shape: RoundedRectangleBorder(
