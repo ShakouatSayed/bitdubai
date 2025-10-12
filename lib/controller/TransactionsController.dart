@@ -46,11 +46,25 @@ class TransactionsController extends GetxController {
     List<TransactionsModels> list = List.from(transactions);
 
     if (selectedFilter.value != "All") {
-      list = list
-          .where(
-            (tx) => tx.type.toLowerCase() == selectedFilter.value.toLowerCase(),
-          )
-          .toList();
+      final filter = selectedFilter.value.toLowerCase();
+      // list = list
+      //     .where(
+      //       (tx) => tx.type.toLowerCase() == selectedFilter.value.toLowerCase(),
+      //     )
+      //     .toList();
+      list = list.where((tx){
+        switch(filter){
+          case "sent" :
+            return tx.type.toLowerCase() == "sent";
+          case "received":
+            return tx.type.toLowerCase() == "received";
+          case "pending":
+            return tx.type.toLowerCase() == "pending";
+            default:
+              return true;
+        }
+      }).toList();
+
     }
 
     if (searchQuery.value.isNotEmpty) {

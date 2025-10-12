@@ -10,17 +10,15 @@ class TransactionsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgraoundColor,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            _buildCustomAppbar(),
-            SizedBox(height: 20),
-            _buildToggleFilters(),
-            SizedBox(height: 20),
-            _buildTransactionsList(),
-          ],
-        ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          _buildCustomAppbar(),
+          SizedBox(height: 20),
+          _buildToggleFilters(),
+          SizedBox(height: 20),
+          _buildTransactionsList(),
+        ],
       ),
     );
   }
@@ -78,7 +76,7 @@ class TransactionsPage extends StatelessWidget {
   }
 
   Widget _buildToggleFilters() {
-    final filters = ["All", "Sent", "Received", "pending"];
+    final filters = ["All", "Sent", "Received", "Pending"];
     return Obx(
       () => Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -117,59 +115,61 @@ class TransactionsPage extends StatelessWidget {
       if (controller.filteredTransactions.isEmpty) {
         return Center(child: Text("No Transactions Found"));
       }
-      return ListView.builder(
-        itemCount: controller.filteredTransactions.length,
-        itemBuilder: (context, index) {
-          final tx = controller.filteredTransactions[index];
-          final color = tx.type == "Received"
-              ? Colors.green
-              : tx.type == "Pending"
-              ? Colors.orange
-              : Colors.red;
-          return Card(
-            margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(12),
-            ),
-            elevation: 1,
-            child: ListTile(
-              leading: CircleAvatar(
-                backgroundColor: color.withValues(alpha: 0.1),
-                child: Icon(
-                  tx.type == "Received"
-                      ? Icons.arrow_downward
-                      : tx.type == "Sent"
-                      ? Icons.arrow_upward
-                      : Icons.autorenew,
-                  color: color,
+      return Expanded(
+        child: ListView.builder(
+          itemCount: controller.filteredTransactions.length,
+          itemBuilder: (context, index) {
+            final tx = controller.filteredTransactions[index];
+            final color = tx.type == "Received"
+                ? Colors.green
+                : tx.type == "Pending"
+                ? Colors.orange
+                : Colors.red;
+            return Card(
+              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+              elevation: 1,
+              child: ListTile(
+                leading: CircleAvatar(
+                  backgroundColor: color.withValues(alpha: 0.1),
+                  child: Icon(
+                    tx.type == "Received"
+                        ? Icons.arrow_downward
+                        : tx.type == "Sent"
+                        ? Icons.arrow_upward
+                        : Icons.pending,
+                    color: color,
+                  ),
+                ),
+                title: Text(
+                  tx.title,
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(
+                  "${tx.amountFiat} \n${tx.date} . ${tx.time}",
+                  style: TextStyle(color: Colors.grey),
+                ),
+                trailing: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Text(
+                      tx.amountCrypto +
+                          (tx.status == "Pending" ? ("Pending") : ""),
+                      style: TextStyle(
+                        color: tx.status == "Pending"
+                            ? Colors.orange
+                            : Colors.grey,
+                      ),
+                    ),
+                  ],
                 ),
               ),
-              title: Text(
-                tx.title,
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              subtitle: Text(
-                "${tx.amountFiat} \n${tx.date} . ${tx.time}",
-                style: TextStyle(color: Colors.grey),
-              ),
-              trailing: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Text(
-                    tx.amountCrypto +
-                        (tx.status == "Pending" ? ("Pending") : ""),
-                    style: TextStyle(
-                      color: tx.status == "Pending"
-                          ? Colors.orange
-                          : Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          );
-        },
+            );
+          },
+        ),
       );
     });
   }
