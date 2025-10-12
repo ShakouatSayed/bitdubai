@@ -1,0 +1,92 @@
+{
+  "transactions" : [
+    {
+      "title" : "Buy Bitcoin",
+      "type" : "Received",
+      "amountCrypto" : "+0.0025",
+      "cryptoSymbol" : "BTC",
+      "amountFiat" : "+450 AED",
+      "date" : "Set 30,2025",
+      "time" : "14:30",
+      "status" : "Completed",
+      "hash" : "0x1a2b3c.."
+    },
+    {
+      "title" : "Send USD",
+      "type" : "Sent",
+      "amountCrypto" : "-500",
+      "cryptoSymbol" : "USDT",
+      "amountFiat" : "-1,835 AED",
+      "date" : "Set 30,2025",
+      "time" : "09:15",
+      "status" : "Completed",
+      "hash" : "0x4d5e6f.."
+    },
+    {
+      "title" : "Receive Bitcoin",
+      "type" : "Received",
+      "amountCrypto" : "+0.0010",
+      "cryptoSymbol" : "BTC",
+      "amountFiat" : "-180 AED",
+      "date" : "Set 29,2025",
+      "time" : "18:45",
+      "status" : "Completed",
+      "hash" : "0x7g8h9i.."
+    },
+    {
+      "title" : "International Transfer",
+      "type" : "Sent",
+      "amountCrypto" : "-2000",
+      "cryptoSymbol" : "AED",
+      "amountFiat" : "-2,000 AED",
+      "date" : "Set 28,2025",
+      "time" : "11:20",
+      "status" : "Completed",
+      "hash" : "RMT-12345.."
+    },
+    {
+      "title" : "Payment to Merchant",
+      "type" : "Sent",
+      "amountCrypto" : "-45.50",
+      "cryptoSymbol" : "AED",
+      "amountFiat" : "-45.50 AED",
+      "date" : "Set 28,2025",
+      "time" : "16:00",
+      "status" : "Completed",
+      "hash" : "MCH-67890.."
+    },
+    {
+      "title" : "Sell Bitcoin",
+      "type" : "Sent",
+      "amountCrypto" : "-0.0050",
+      "cryptoSymbol" : "BTC",
+      "amountFiat" : "+900 AED",
+      "date" : "Set 27, 2025",
+      "time" : "13:10",
+      "status" : "Completed",
+      "hash" : "0xjkl123.."
+    },
+    {
+      "title" : "Buy USD",
+      "type" : "Received",
+      "amountCrypto" : "1000",
+      "cryptoSymbol" : "USDT",
+      "amountFiat" : "-3,680 AED",
+      "date" : "Set 26,2025",
+      "time" : "10:30",
+      "status" : "Completed",
+      "hash" : "0xmno456.."
+    },
+    {
+      "title" : "Send Bitcoin",
+      "type" : "Sent",
+      "amountCrypto" : "-0.0015",
+      "cryptoSymbol" : "BTC",
+      "amountFiat" : "-270 AED",
+      "date" : "Set 25, 2025",
+      "time" : "15:45",
+      "status" : "Pending",
+      "hash" : "0xpqr789.."
+    }
+  ]
+}
