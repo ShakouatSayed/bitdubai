@@ -16,7 +16,7 @@ class TransactionsPage extends StatelessWidget {
           _buildCustomAppbar(),
           SizedBox(height: 20),
           _buildToggleFilters(),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           _buildTransactionsList(),
         ],
       ),
@@ -120,11 +120,15 @@ class TransactionsPage extends StatelessWidget {
           itemCount: controller.filteredTransactions.length,
           itemBuilder: (context, index) {
             final tx = controller.filteredTransactions[index];
+
+
             final color = tx.type == "Received"
                 ? Colors.green
                 : tx.type == "Pending"
                 ? Colors.orange
                 : Colors.red;
+
+
             return Card(
               margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
               shape: RoundedRectangleBorder(

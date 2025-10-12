@@ -64,7 +64,6 @@ class TransactionsController extends GetxController {
               return true;
         }
       }).toList();
-
     }
 
     if (searchQuery.value.isNotEmpty) {

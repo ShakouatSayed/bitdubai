@@ -1,7 +1,10 @@
+import 'package:bitdubai/buySell/BuySell.dart';
 import 'package:bitdubai/controller/DashboardController.dart';
 import 'package:bitdubai/utils/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../sendReciveCrypto/SendReceiveCrypto.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
@@ -21,7 +24,7 @@ class DashboardScreen extends StatelessWidget {
             children: [
               _buildInformationPart(),
               SizedBox(height: 20),
-              _buildQuickActionPart(),
+              _buildQuickActionPart(context),
               SizedBox(height: 20),
               _buildYourAssetsPart(),
               SizedBox(height: 20),
@@ -124,17 +127,22 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildQuickActionPart() {
+  Widget _buildQuickActionPart(BuildContext context) {
     final actions = [
-      {"icon": Icons.swap_horiz, "label": "Buy/Sell", "color": Colors.blue},
-      {"icon": Icons.arrow_upward, "label": "send", "color": Colors.green},
+      {"icon": Icons.swap_horiz, "label": "Buy/Sell", "color": Colors.blue, "onTap" :(){
+        Navigator.push(context, MaterialPageRoute(builder: (_) => BuySell()));
+      }},
+      {"icon": Icons.arrow_upward, "label": "send", "color": Colors.green, "onTap" :(){
+        Navigator.push(context, MaterialPageRoute(builder: (_) => SendReceiveCrypto()));
+      }},
       {
         "icon": Icons.arrow_downward,
         "label": "receive",
         "color": Colors.orange,
+        "onTap" :(){},
       },
-      {"icon": Icons.send, "label": "Remittance", "color": Colors.purple},
-      {"icon": Icons.qr_code, "label": "Pay Merchant", "color": Colors.pink},
+      {"icon": Icons.send, "label": "Remittance", "color": Colors.purple, "onTap" :(){}},
+      {"icon": Icons.qr_code, "label": "Pay Merchant", "color": Colors.pink, "onTap" :(){}},
     ];
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
@@ -151,45 +159,48 @@ class DashboardScreen extends StatelessWidget {
             runSpacing: 10,
             children: actions
                 .map(
-                  (a) => Container(
-                    //alignment: Alignment.center,
-                    width: 100,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(16),
-                      color: Colors.white,
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade700,
-                          blurRadius: 6,
-                          offset: Offset(0, 3),
-                        ),
-                      ],
-                    ),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          padding: EdgeInsets.all(15),
-                          decoration: BoxDecoration(
-                            color: (a["color"] as Color),
-                            borderRadius: BorderRadius.circular(12),
+                  (a) => GestureDetector(
+                    onTap: a["onTap"] as VoidCallback,
+                    child: Container(
+                      //alignment: Alignment.center,
+                      width: 100,
+                      height: 120,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(16),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.shade700,
+                            blurRadius: 6,
+                            offset: Offset(0, 3),
                           ),
-                          child: Icon(
-                            (a["icon"] as IconData),
-                            color: Colors.white,
-                            size: 30,
+                        ],
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            padding: EdgeInsets.all(15),
+                            decoration: BoxDecoration(
+                              color: (a["color"] as Color),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Icon(
+                              (a["icon"] as IconData),
+                              color: Colors.white,
+                              size: 30,
+                            ),
                           ),
-                        ),
-                        SizedBox(height: 8),
-                        Text(
-                          (a["label"] as String),
-                          style: TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.w500,
+                          SizedBox(height: 8),
+                          Text(
+                            (a["label"] as String),
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.w500,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 )

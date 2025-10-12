@@ -79,7 +79,7 @@
     },
     {
       "title" : "Send Bitcoin",
-      "type" : "Sent",
+      "type" : "Pending",
       "amountCrypto" : "-0.0015",
       "cryptoSymbol" : "BTC",
       "amountFiat" : "-270 AED",
