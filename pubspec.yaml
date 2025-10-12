@@ -62,7 +62,8 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    - assets/data/
+    - assets/data/DashboardData.json
+    - assets/data/TransactionsData.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

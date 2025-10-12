@@ -17,15 +17,19 @@ class TransactionsController extends GetxController {
   }
 
   Future<void> loadTransactions() async {
-    final jsonString = await rootBundle.loadString(
-      "assets/data/transactionsData.json",
-    );
-    final jsonData = jsonDecode(jsonString);
-    final list = (jsonData["transactions"] as List)
-        .map((e) => TransactionsModels.fromJson(e))
-        .toList();
-    transactions.value = list;
-    filteredTransactions.value = list;
+   try{
+     final jsonString = await rootBundle.loadString(
+       "assets/data/TransactionsData.json",
+     );
+     final jsonData = jsonDecode(jsonString);
+     final list = (jsonData["transactions"] as List)
+         .map((e) => TransactionsModels.fromJson(e))
+         .toList();
+     transactions.value = list;
+     filteredTransactions.value = list;
+   }catch(e){
+     print("Error Loading Transactions.$e");
+   }
   }
 
   void setFilter(String filter) {
@@ -39,31 +43,34 @@ class TransactionsController extends GetxController {
   }
 
   void applyFilters() {
-    var list = transactions;
+    List<TransactionsModels> list = List.from(transactions);
 
     if (selectedFilter.value != "All") {
       list = list
           .where(
             (tx) => tx.type.toLowerCase() == selectedFilter.value.toLowerCase(),
           )
-          .toList()
-          .obs;
+          .toList();
     }
 
     if (searchQuery.value.isNotEmpty) {
+      final query = searchQuery.value.toLowerCase();
       list = list
           .where(
             (tx) =>
-                tx.title.toLowerCase().contains(
-                  searchQuery.value.toLowerCase(),
-                ) ||
-                tx.cryptoSymbol.toLowerCase().contains(
-                  searchQuery.value.toLowerCase(),
-                ),
+                tx.title.toLowerCase().contains(query) ||
+                tx.cryptoSymbol.toLowerCase().contains(query) ||
+                tx.hash.toLowerCase().contains(query),
           )
-          .toList()
-          .obs;
+          .toList();
     }
     filteredTransactions.value = list;
+  }
+
+  // Clear all filters
+  void clearFilters(){
+    selectedFilter.value = "All";
+    searchQuery.value = "";
+    filteredTransactions.value = List.from(transactions);
   }
 }

@@ -23,15 +23,15 @@ class TransactionsModels {
 
   factory TransactionsModels.fromJson(Map<String, dynamic> json) {
     return TransactionsModels(
-      title: json["title"],
-      type: json["type"],
-      amountCrypto: json["amountCrypto"],
-      cryptoSymbol: json["cryptoSymbol"],
-      amountFiat: json["amountFiat"],
-      date: json["date"],
-      time: json["time"],
-      status: json["status"],
-      hash: json["hash"],
+      title: json["title"] ?? "",
+      type: json["type"] ?? "",
+      amountCrypto: json["amountCrypto"] ?? "",
+      cryptoSymbol: json["cryptoSymbol"] ?? "",
+      amountFiat: json["amountFiat"] ?? "",
+      date: json["date"] ?? "" ?? "",
+      time: json["time"] ?? "",
+      status: json["status"] ?? "",
+      hash: json["hash"] ?? "",
     );
   }
 }
