@@ -23,7 +23,7 @@ class SendReceiveCrypto extends StatelessWidget{
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(26),
-        color: Color(0xFF0A8ED9),
+        color: Color(0xFF00C2AA),
       ),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Column(
@@ -41,7 +41,7 @@ class SendReceiveCrypto extends StatelessWidget{
               ),
               SizedBox(width: 10),
               Text(
-                "Transactions",
+                "Send Crypto/Receive Crypto",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ],
@@ -49,18 +49,7 @@ class SendReceiveCrypto extends StatelessWidget{
           SizedBox(height: 20),
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Search Transactions...",
-                prefixIcon: Icon(Icons.search, size: 30),
-                filled: true,
-                fillColor: Color(0xFF10B1D3),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
+
           ),
           SizedBox(height: 10),
         ],

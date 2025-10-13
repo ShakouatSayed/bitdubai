@@ -1,0 +1,23 @@
+{
+  "balance" : 52450.75,
+  "currency" : "AED",
+  "feePercent" : 1,
+  "assets" : [
+    {
+      "name" : "Bitcoin",
+      "symbol" : "BTC",
+      "icon" : "assets/icons/btc.png",
+      "buyRate" : 180000,
+      "sellRate" :178000
+    },
+    {
+      "name" : "USDT",
+      "symbol" : "USDT",
+      "icon" : "assets/icon/usdt.png",
+      "buyRate" : 3.67,
+      "sellRate" : 3.60
+    }
+  ],
+  "amountOptions" : [100, 500, 1000, 5000],
+  "infoText" : "Your crypto will be deposited to your wallet instantly after payment confirmation."
+}

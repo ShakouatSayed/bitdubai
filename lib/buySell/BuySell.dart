@@ -40,26 +40,18 @@ class BuySell extends StatelessWidget{
               ),
               SizedBox(width: 10),
               Text(
-                "Transactions",
+                "Buy/Sell",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
             ],
           ),
           SizedBox(height: 20),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: "Search Transactions...",
-                prefixIcon: Icon(Icons.search, size: 30),
-                filled: true,
-                fillColor: Color(0xFF10B1D3),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(12),
-                  borderSide: BorderSide.none,
-                ),
-              ),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // children: ["Buy","Sell"].map((mode) {
+            //   //bool active = controller.mode.value == mode;
+            //   //return
+            // }),
           ),
           SizedBox(height: 10),
         ],
