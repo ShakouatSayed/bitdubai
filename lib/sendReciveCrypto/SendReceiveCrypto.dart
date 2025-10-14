@@ -22,7 +22,7 @@ class SendReceiveCrypto extends StatelessWidget{
       //color: Color(0xFF0A8ED9),
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(26),
+        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(16), bottomRight: Radius.circular(16)),
         color: Color(0xFF00C2AA),
       ),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),

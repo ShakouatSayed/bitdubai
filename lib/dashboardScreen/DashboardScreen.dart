@@ -46,7 +46,7 @@ class DashboardScreen extends StatelessWidget {
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
         ),
-        borderRadius: BorderRadius.circular(12),
+        borderRadius: BorderRadius.only(bottomLeft: Radius.circular(16), bottomRight: Radius.circular(16)),
       ),
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: Obx(

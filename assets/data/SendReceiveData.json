@@ -1,0 +1,16 @@
+[
+  {
+    "name" : "Bitcoin",
+    "symbol" : "BTC",
+    "balance" : 0.0125,
+    "logo_chart" : "B",
+    "address" : "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
+  },
+  {
+    "name" : "USDT",
+    "symbol" : "USDT",
+    "balance" : 13650.0,
+    "logo_char" : "₮",
+    "address" : "0x9702230A8Ea53601f5E66566Db9F986544AE9605"
+  }
+]

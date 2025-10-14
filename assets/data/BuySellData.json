@@ -13,7 +13,7 @@
     {
       "name" : "USDT",
       "symbol" : "USDT",
-      "icon" : "assets/icon/usdt.png",
+      "icon" : "assets/icons/usdt.png",
       "buyRate" : 3.67,
       "sellRate" : 3.60
     }
