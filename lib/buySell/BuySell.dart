@@ -238,10 +238,10 @@ class BuySell extends StatelessWidget{
     return Obx(() => Padding(
       padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
       child: Wrap(
-        spacing: 28,
-        runSpacing: 10,
-        // crossAxisAlignment: WrapCrossAlignment.end,
-        // alignment: WrapAlignment.spaceAround,
+        spacing: 10,
+        //runSpacing: 10,
+        //crossAxisAlignment: WrapCrossAlignment.end,
+        //alignment: WrapAlignment.spaceBetween,
         children: controller.amountOptions.map((amt){
           return OutlinedButton(onPressed:() => controller.updatePay(amt.toDouble()), child: Text("$amt"));
         }).toList(),
@@ -266,19 +266,21 @@ class BuySell extends StatelessWidget{
   }
 
   Widget _buildInfoCard(){
-    return Obx(() => Container(
-      padding: EdgeInsets.all(16),
-      margin: EdgeInsets.symmetric(horizontal: 10),
-      decoration: BoxDecoration(
-        color: Colors.amber.shade50,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Row(
-        children: [
-          Icon(Icons.info_outline, color: Colors.amber),
-          SizedBox(width: 10),
-          Expanded(child: Text(controller.infoText.value)),
-        ],
+    return Obx(() => SafeArea(
+      child: Container(
+        padding: EdgeInsets.all(16),
+        margin: EdgeInsets.symmetric(horizontal: 10),
+        decoration: BoxDecoration(
+          color: Colors.amber.shade50,
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Row(
+          children: [
+            Icon(Icons.info_outline, color: Colors.amber),
+            SizedBox(width: 10),
+            Expanded(child: Text(controller.infoText.value)),
+          ],
+        ),
       ),
     ));
   }
