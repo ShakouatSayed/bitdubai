@@ -10,7 +10,7 @@ class SendReceiveController extends GetxController{
   // Static variable reactive
   var isSendSelected = true.obs;
   var assets = <SendReceiveModel>[].obs;
-  var selectedAsset = Rx<SendReceiveModel?>(null);
+  var selectedAsset = Rxn<SendReceiveModel?>(null);
 
   final addressController = TextEditingController();
   final amountController = TextEditingController();

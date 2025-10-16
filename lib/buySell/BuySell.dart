@@ -121,7 +121,6 @@ class BuySell extends StatelessWidget{
                                         ),
                     ),
                 ]
-
                 ),
                 //SizedBox(width: 6),
                Column(
