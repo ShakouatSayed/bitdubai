@@ -28,8 +28,8 @@ class BuySell extends StatelessWidget{
               _buildQuickAmounts(),
               SizedBox(height: 10),
               _buildConfirmButton(),
-              SizedBox(height: 10),
               _buildInfoCard(),
+              SizedBox(height: 20),
             ],
           ),
         );
@@ -101,7 +101,7 @@ class BuySell extends StatelessWidget{
           onTap: ()=> controller.selectedAsset(e),
           child: Container(
             margin: EdgeInsets.symmetric(horizontal: 10),
-            padding: EdgeInsets.all(16),
+            padding: EdgeInsets.symmetric(vertical: 12, horizontal: 10),
             //padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
             decoration: BoxDecoration(
               color: selected ? Colors.blue.shade50 : Colors.grey.shade200,
@@ -115,10 +115,12 @@ class BuySell extends StatelessWidget{
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children:[
                     CircleAvatar(
-                      radius: 20,
-                      child: ClipOval(
-                      child: Image.asset(height: 10, width: 10,e.icon, fit: BoxFit.contain, scale: 5),
-                                        ),
+                      // child: ClipOval(
+                      // child: Image.asset(height: 10, width: 10,e.icon, fit: BoxFit.contain, scale: 5),
+                      // ),
+                      backgroundColor: selected ? Color(0xFFE3F8F1) : Color(0xFFF5F5F5),
+                      radius: 16,
+                      child: Text(e.icon, style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18)),
                     ),
                 ]
                 ),

@@ -3,7 +3,7 @@
     "name" : "Bitcoin",
     "symbol" : "BTC",
     "balance" : 0.0125,
-    "logo_chart" : "B",
+    "logo_char" : "B",
     "address" : "bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh"
   },
   {

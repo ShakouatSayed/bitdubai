@@ -6,14 +6,14 @@
     {
       "name" : "Bitcoin",
       "symbol" : "BTC",
-      "icon" : "assets/icons/btc.png",
+      "icon" : "B",
       "buyRate" : 180000,
       "sellRate" :178000
     },
     {
       "name" : "USDT",
       "symbol" : "USDT",
-      "icon" : "assets/icons/usdt.png",
+      "icon" : "₮",
       "buyRate" : 3.67,
       "sellRate" : 3.60
     }

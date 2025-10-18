@@ -17,8 +17,8 @@ class SendReceiveModel {
     return SendReceiveModel(
       name: json["name"],
       symbol: json["symbol"],
-      balance: json["balance"].toDuble(),
-      logoChar: json["logo_char"],
+      balance: json["balance"].toDouble(),
+      logoChar: json["logo_char"] ?? "",
       address: json["address"],
     );
   }

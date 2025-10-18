@@ -1,4 +1,6 @@
 import 'package:bitdubai/dashboardScreen/DashboardScreen.dart';
+import 'package:bitdubai/historyPage/HistoryPage.dart';
+import 'package:bitdubai/profilePage/ProfilePage.dart';
 import 'package:bitdubai/transactionsScreen/TransactionsPage.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +23,7 @@ class _StartPageState extends State<StartPage> {
         destinations: [
           NavigationDestination(icon: Icon(Icons.home), label: "Home"),
           NavigationDestination(icon: Icon(Icons.wallet), label: "Wallet"),
-          NavigationDestination(icon: Icon(Icons.settings), label: "Settings"),
+          NavigationDestination(icon: Icon(Icons.history), label: "History"),
           NavigationDestination(
             icon: Icon(Icons.person_outline),
             label: "Profile",
@@ -31,7 +33,8 @@ class _StartPageState extends State<StartPage> {
       body: <Widget>[
         DashboardScreen(),
         TransactionsPage(),
-
+        HistoryPage(),
+        ProfilePage(),
       ][_currentIndex],
     );
   }
