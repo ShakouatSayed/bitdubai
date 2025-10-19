@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../controller/SendReceiveController.dart';
+import '../dashboardScreen/StartPage.dart';
 import '../utils/Style.dart';
 import 'ReceiveCryptoPage.dart';
 import 'SendCryptoPage.dart';
@@ -51,7 +52,7 @@ class SendReceiveCrypto extends StatelessWidget{
             children: [
               IconButton(
                 onPressed: () {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => StartPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => StartPage()));
                 },
                 icon: Icon(Icons.arrow_back),
               ),

@@ -3,6 +3,8 @@ import 'package:bitdubai/utils/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../dashboardScreen/StartPage.dart';
+
 class BuySell extends StatelessWidget{
   final controller = Get.put(BuySellController());
   BuySell({super.key});
@@ -17,7 +19,7 @@ class BuySell extends StatelessWidget{
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              _buildCustomAppbar(),
+              _buildCustomAppbar(context),
               SizedBox(height: 20),
               _buildAssetSelection(),
               SizedBox(height: 10),
@@ -38,7 +40,7 @@ class BuySell extends StatelessWidget{
     );
   }
 
-  Widget _buildCustomAppbar(){
+  Widget _buildCustomAppbar(BuildContext context){
     return Container(
       //color: Color(0xFF0A8ED9),
       width: double.infinity,
@@ -56,7 +58,7 @@ class BuySell extends StatelessWidget{
             children: [
               IconButton(
                 onPressed: () {
-                  //Navigator.push(context, MaterialPageRoute(builder: (context) => StartPage()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => StartPage()));
                 },
                 icon: Icon(Icons.arrow_back),
               ),

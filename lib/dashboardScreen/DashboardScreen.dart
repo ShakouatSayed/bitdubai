@@ -1,11 +1,11 @@
 import 'package:bitdubai/buySell/BuySell.dart';
 import 'package:bitdubai/controller/DashboardController.dart';
 import 'package:bitdubai/payMerchantPage/PayMerchantPage.dart';
+import 'package:bitdubai/receivePage/ReceivePage.dart';
 import 'package:bitdubai/sendAbroadPage/SendAbroadPage.dart';
 import 'package:bitdubai/utils/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../sendReciveCrypto/SendReceiveCrypto.dart';
 
 class DashboardScreen extends StatelessWidget {
@@ -142,7 +142,7 @@ class DashboardScreen extends StatelessWidget {
         "label": "receive",
         "color": Colors.orange,
         "onTap" :(){
-
+          Navigator.push(context, MaterialPageRoute(builder: (_) => ReceivePage()));
         },
       },
       {"icon": Icons.send, "label": "Remittance", "color": Colors.purple, "onTap" :(){

@@ -136,16 +136,12 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: screenWidth * 0.15,
                                   decoration: BoxDecoration(
                                     color: selected == 0
-                                        ? Colors.white
-                                        : Colors.green,
+                                        ? Colors.green
+                                        : Colors.white,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
-                                      color: selected == 0
-                                          ? Colors.green
-                                          : Colors.white.withValues(
-                                              alpha: 0.10,
-                                            ),
-                                      width: 1.0,
+                                      color: Colors.green,
+                                      width: 1.5,
                                     ),
                                   ),
                                   child: Center(
@@ -154,8 +150,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                       textAlign: TextAlign.center,
                                       style: TextStyle(
                                         color: selected == 0
-                                            ? Color(0xFF1A73E8)
-                                            : Colors.white,
+                                            ? Colors.white
+                                            : Colors.green,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -175,14 +171,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                   decoration: BoxDecoration(
                                     color: selected == 1
                                         ? Colors.green
-                                        : Colors.white.withValues(
-                                            alpha: 0.10,
-                                          ),
+                                        : Colors.white,
                                     borderRadius: BorderRadius.circular(12),
                                     border: Border.all(
-                                      color: Colors.white.withValues(
-                                        alpha: 0.18,
-                                      ),
+                                      color: Colors.green,
                                       width: 1.0,
                                     ),
                                   ),
@@ -192,7 +184,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       style: TextStyle(
                                         color: selected == 1
                                             ? Colors.white
-                                            : Colors.white12,
+                                            : Colors.green,
                                         fontSize: 16,
                                         fontWeight: FontWeight.w600,
                                       ),

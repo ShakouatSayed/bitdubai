@@ -1,11 +1,11 @@
 [
   {
-    "id" : "1",
+    "id" : 1,
     "name" : "Dubai Mall-Starbucks",
     "lastPaid" : "45.50 AED"
   },
   {
-    "id" : "2",
+    "id" : 2,
     "name" : "Emirates Petrol Station",
     "lastPaid" : "150.00 AED"
   }
