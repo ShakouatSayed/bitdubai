@@ -116,63 +116,66 @@ class TransactionsPage extends StatelessWidget {
         return Center(child: Text("No Transactions Found"));
       }
       return Expanded(
-        child: ListView.builder(
-          itemCount: controller.filteredTransactions.length,
-          itemBuilder: (context, index) {
-            final tx = controller.filteredTransactions[index];
+        child: RefreshIndicator(
+          onRefresh: controller.refreshTransactions,
+          child: ListView.builder(
+            itemCount: controller.filteredTransactions.length,
+            itemBuilder: (context, index) {
+              final tx = controller.filteredTransactions[index];
 
 
-            final color = tx.type == "Received"
-                ? Colors.green
-                : tx.type == "Pending"
-                ? Colors.orange
-                : Colors.red;
+              final color = tx.type == "Received"
+                  ? Colors.green
+                  : tx.type == "Pending"
+                  ? Colors.orange
+                  : Colors.red;
 
 
-            return Card(
-              margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-              elevation: 1,
-              child: ListTile(
-                leading: CircleAvatar(
-                  backgroundColor: color.withValues(alpha: 0.1),
-                  child: Icon(
-                    tx.type == "Received"
-                        ? Icons.arrow_downward
-                        : tx.type == "Sent"
-                        ? Icons.arrow_upward
-                        : Icons.pending,
-                    color: color,
+              return Card(
+                margin: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                elevation: 1,
+                child: ListTile(
+                  leading: CircleAvatar(
+                    backgroundColor: color.withValues(alpha: 0.1),
+                    child: Icon(
+                      tx.type == "Received"
+                          ? Icons.arrow_downward
+                          : tx.type == "Sent"
+                          ? Icons.arrow_upward
+                          : Icons.pending,
+                      color: color,
+                    ),
+                  ),
+                  title: Text(
+                    tx.title,
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  subtitle: Text(
+                    "${tx.amountFiat} \n${tx.date} . ${tx.time}",
+                    style: TextStyle(color: Colors.grey),
+                  ),
+                  trailing: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        tx.amountCrypto +
+                            (tx.status == "Pending" ? ("Pending") : ""),
+                        style: TextStyle(
+                          color: tx.status == "Pending"
+                              ? Colors.orange
+                              : Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-                title: Text(
-                  tx.title,
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                subtitle: Text(
-                  "${tx.amountFiat} \n${tx.date} . ${tx.time}",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                trailing: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      tx.amountCrypto +
-                          (tx.status == "Pending" ? ("Pending") : ""),
-                      style: TextStyle(
-                        color: tx.status == "Pending"
-                            ? Colors.orange
-                            : Colors.grey,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
+              );
+            },
+          ),
         ),
       );
     });

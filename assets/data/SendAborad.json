@@ -1,0 +1,18 @@
+{
+  "beneficiaries" : [
+    {
+      "id" : 1,
+      "name" : "Raj Kumar",
+      "country" : "India",
+      "bank" : "HDFC Bank ****4567",
+      "flag" : "\uD83C\uDDEE\uD83C\uDDF3"
+    },
+    {
+      "id" : 2,
+      "name" : "Maria Santos",
+      "country" : "Philippines",
+      "bank" : "BDO ****8901",
+      "flag" : "\uD83C\uDDF5\uD83C\uDDED"
+    }
+  ]
+}

@@ -1,5 +1,7 @@
 import 'package:bitdubai/buySell/BuySell.dart';
 import 'package:bitdubai/controller/DashboardController.dart';
+import 'package:bitdubai/payMerchantPage/PayMerchantPage.dart';
+import 'package:bitdubai/sendAbroadPage/SendAbroadPage.dart';
 import 'package:bitdubai/utils/Style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -139,10 +141,16 @@ class DashboardScreen extends StatelessWidget {
         "icon": Icons.arrow_downward,
         "label": "receive",
         "color": Colors.orange,
-        "onTap" :(){},
+        "onTap" :(){
+
+        },
       },
-      {"icon": Icons.send, "label": "Remittance", "color": Colors.purple, "onTap" :(){}},
-      {"icon": Icons.qr_code, "label": "Pay Merchant", "color": Colors.pink, "onTap" :(){}},
+      {"icon": Icons.send, "label": "Remittance", "color": Colors.purple, "onTap" :(){
+        Navigator.push(context, MaterialPageRoute(builder: (_) => SendAbroadPage()));
+      }},
+      {"icon": Icons.qr_code, "label": "Pay Merchant", "color": Colors.pink, "onTap" :(){
+        Navigator.push(context, MaterialPageRoute(builder: (_) => PayMerchantPage()));
+      }},
     ];
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),

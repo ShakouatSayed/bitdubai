@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 class ProfileController extends GetxController {
   Rxn<ProfileModel> profile = Rxn<ProfileModel>();
+  var selectedLanguage = "English".obs;
 
   @override
   void onInit() {

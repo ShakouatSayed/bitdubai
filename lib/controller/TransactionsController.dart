@@ -9,6 +9,7 @@ class TransactionsController extends GetxController {
   var filteredTransactions = <TransactionsModels>[].obs;
   var selectedFilter = "All".obs;
   var searchQuery = "".obs;
+  var isLoading = false.obs;
 
   @override
   void onInit() {
@@ -80,6 +81,10 @@ class TransactionsController extends GetxController {
     filteredTransactions.value = list;
   }
 
+  // Refresh transactions (for pull to refresh)
+  Future<void> refreshTransactions() async{
+    await loadTransactions();
+  }
   // Clear all filters
   void clearFilters(){
     selectedFilter.value = "All";
