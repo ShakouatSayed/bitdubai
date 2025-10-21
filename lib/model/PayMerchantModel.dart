@@ -12,7 +12,7 @@ class PayMerchantModel {
   factory PayMerchantModel.fromJson(Map<String, dynamic> json) {
     return PayMerchantModel(
       id: json["id"],
-      name: json["json"],
+      name: json["name"],
       lastPaid: json["lastPaid"],
     );
   }

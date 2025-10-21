@@ -199,7 +199,7 @@ class PayMerchantPage extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
-          //crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               "Recent Merchants",
